@@ -44,6 +44,9 @@ with BaseSwis(SwisConfig()) as swis:
             if res == serial:
                 print("Set serial successfully!")
                 tryiterator = -1
+            else:
+                tryiterator -= 1
+                print("Mismatch of serials, trying again...")
         else:
             tryiterator -= 1
             print("Set failed, trying again...")
