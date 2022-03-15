@@ -2,7 +2,7 @@ import subprocess
 import configparser
 import sys
 import time
-from swis import BaseSwis, SwisConfig
+from swis import Swis
 
 config = configparser.ConfigParser()
 config.read('config.ini')
@@ -23,7 +23,7 @@ serial = input("Serial number: ")
 time.sleep(0.1)
 
 print("Connecting to mainboard.")
-with BaseSwis(SwisConfig()) as swis:
+with Swis() as swis:
 
     print("Connected to mainboard.")
     tryiterator = 10
